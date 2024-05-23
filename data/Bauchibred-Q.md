@@ -146,6 +146,7 @@ https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b330c215
     }
 ```
 
+
 ## QA-03 Current voting logic is flawed as it allows for double votes for the same proposal
 
 ### Proof of Concept
@@ -604,3 +605,5 @@ Apply these changes https://github.com/code-423n4/2024-05-munchables/blob/57dff4
     }
 
 ```
+---
+>Edit: I assume QA-03 & QA-04 might be more impactful than QA to protocol so also submitted reports on similar bug ideas as med severity incase this QA gets dropped during validation.
