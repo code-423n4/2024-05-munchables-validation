@@ -1,4 +1,4 @@
-**`L-02 Unused errors in LockManager.sol`**
+**`G-01 Unused errors in LockManager.sol`**
 
 In ILockManager.sol, 28 errors has been identified in order to be used in LockManager.sol
 
