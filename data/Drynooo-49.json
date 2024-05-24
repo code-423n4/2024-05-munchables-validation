@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "Drynooo",
+  "risk": "2",
+  "title": "PriceFeed can continually launch the wrong proposals, preventing correct proposals from being launched",
+  "issueId": 49,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/49"
+}
