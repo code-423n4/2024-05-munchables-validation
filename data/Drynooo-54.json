@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "Drynooo",
+  "risk": "3",
+  "title": "If the user does not lock during the lockdrop period, the retainer may be lost.",
+  "issueId": 54,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/54"
+}
