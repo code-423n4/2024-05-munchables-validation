@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "Pelz",
+  "risk": "2",
+  "title": "Use of Deprecated `transfer` Method in `unlock` Function Leads to Potential Ether Transfer Failures",
+  "issueId": 68,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/68"
+}
