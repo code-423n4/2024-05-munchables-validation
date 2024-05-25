@@ -1,0 +1,1 @@
+`approveUSDPrice` does not have a check to see if the user has already disapproved the price resulting in a user being able to simultaneously approve and disapprove a price.
