@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "choi",
+  "risk": "2",
+  "title": "Attacker Can Lock Tokens on Behalf of Another User Without Permission",
+  "issueId": 139,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/139"
+}
