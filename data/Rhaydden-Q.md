@@ -1,20 +1,21 @@
 # Quality Assurance for Munchables
 
+
 ## Table of Contents
 
 | Issue ID | Description |
 | -------- | ----------- |
 | [QA-1](#qa-1-inconsistent-state-in-lockedtokens-mapping-after-unlocking-full-balance) | Inconsistent State in `lockedTokens` Mapping After Unlocking Full Balance |
 | [QA-2](#qa-2-unsafe-support-of-non-standard-erc-20-tokens) | Unsafe support of non-standard ERC-20 tokens |
-| [QA-3](#qa-3-division-by-0-can-cause-errors-in-lockmanager-contract) | Division by 0 can cause errors in LockManager contract |
-| [QA-4](#qa-4-incorrect-calculation-of-nft-rewards-in-_lock-function) | Incorrect Calculation of NFT Rewards in `_lock` Function |
+| [QA-3](#qa-3-division-by-0-can-cause-errors-in-lockmanager-contract) | Division by 0 can cause errors in `LockManager` contract |
+| [QA-4](#qa-4-incorrect-calculation-of-nft-rewards-in-lock-function) | Incorrect Calculation of NFT Rewards in `_lock` Function |
 | [QA-5](#qa-5-inconsistent-behavior-in-getlocked-function-of-lockmanagersol) | Inconsistent Behavior in `getLocked` Function of `LockManager.sol` |
 | [QA-6](#qa-6-potential-misleading-data-return-in-getconfiguredtoken-function) | Potential Misleading Data Return in `getConfiguredToken` Function |
 | [QA-7](#qa-7-lockdrop-configuration-allows-start-time-in-the-past) | Lockdrop configuration allows start time in the past |
 | [QA-8](#qa-8-incompatibility-of-lockmanager-with-blasts-rebasing-eth-and-yield-modes) | Incompatibility of `LockManager` with Blast's Rebasing ETH and Yield Modes |
 | [QA-9](#qa-9-gas-issue-in-getlockedweightedvalue-function) | Gas issue in `getLockedWeightedValue` Function |
 | [QA-10](#qa-10-lack-of-access-control-on-setusdthresholds-function) | Lack of Access Control on `setUSDThresholds` Function |
-
+| [QA-11](#qa-11-locks-can-be-extended-to-an-old-unlocktime) | Locks can be extended to an old `unlockTime` |
 
 
  ## [QA-1]  Inconsistent State in `lockedTokens` Mapping After Unlocking Full Balance
@@ -449,3 +450,41 @@ function setUSDThresholds(
 // Define the error
 error InvalidThresholdsError();
 ```
+
+
+
+
+
+## [QA-11] Locks can be extended to an old `unlockTime`
+
+Allowing the new unlock time to be the same as the old unlock time can lead to several issues:
+- **No Effective Extension**: The lock duration is effectively not extended, leading to confusion for users.
+- **Bypassing Locking Mechanism**: Users might exploit this to bypass the intended locking mechanism.
+- **User Experience**: Confusing and frustrating for users who believe they are extending their lock duration but find that the unlock time remains unchanged.
+
+#### Proof of Concept
+The issue is present in the `setLockDuration` function. The current check allows the new unlock time to be the same as the old unlock time:
+
+```solidity
+if (
+    uint32(block.timestamp) + uint32(_duration) <
+    lockedTokens[msg.sender][tokenContract].unlockTime
+) {
+    revert LockDurationReducedError();
+}
+```
+
+#### Recommended Mitigation Steps
+To ensure the new unlock time is strictly greater than the old unlock time, update the condition in the `setLockDuration` function as follows:
+
+```diff
+if (
+-     uint32(block.timestamp) + uint32(_duration) <
+-    lockedTokens[msg.sender][tokenContract].unlockTime
++    uint32(block.timestamp) + uint32(_duration) <=
++    lockedTokens[msg.sender][tokenContract].unlockTime
+) {
+    revert LockDurationReducedError();
+}
+```
+
