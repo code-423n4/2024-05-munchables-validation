@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "atoko",
+  "risk": "2",
+  "title": "Inaccurate Calculation of Weighted Value When Lock Duration Expires but Tokens Remain Unlocked",
+  "issueId": 126,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/126"
+}
