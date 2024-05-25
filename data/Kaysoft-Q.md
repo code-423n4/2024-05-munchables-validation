@@ -51,3 +51,54 @@ Link: https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b3
 
 Recommendation: Consider validation to revert when the `_quantity` parameter of `lock` and `unlock` function is zero
 
+
+## [L-3] Boolean `success` return value of `blastAddress.call(...)` not checked.
+
+The return boolean value of a Solidity .call() is not checked in the BaseBlastManager.sol that LockManager.sol inherits from.
+
+Link: https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b330c2157fe23da2a4807d/src/managers/BaseBlastManager.sol#L40C17-L47C18
+
+LockManager.sol inherits from BaseBlastManager.sol
+```solidity
+File: LockManager.sol
+contract LockManager is BaseBlastManager, ILockManager, ReentrancyGuard {
+```
+
+External call is made on line 40 and does not revert when `success` is false.
+```solidity
+File: BaseBlastManager.sol
+function __BaseBlastManager_reconfigure() internal {
+        // load config from the config storage contract and configure myself
+        address blastAddress = configStorage.getAddress(
+            StorageKey.BlastContract
+        );
+        if (blastAddress != address(blastContract)) {
+            blastContract = IBlast(blastAddress);
+            if (blastContract.isAuthorized(address(this))) {
+                blastContract.configureClaimableGas();
+                // fails on cloned networks
+                (bool success, ) = blastAddress.call(
+                    abi.encodeWithSelector(
+                        bytes4(keccak256("configureClaimableYield()"))
+                    )
+                );
+                if (success) {
+                    // not on a cloned network and no compiler error!
+                }
+            }
+        }
+```
+
+
+Recommendation:  Consider reverting the transaction if the `success` return value is false.
+```diff
+ (bool success, ) = blastAddress.call(
+                    abi.encodeWithSelector(
+                        bytes4(keccak256("configureClaimableYield()"))
+                    )
+                );
+--                if (success) {
+--                    // not on a cloned network and no compiler error!
+--                }
+++             require(success, "External call failed");
+```
