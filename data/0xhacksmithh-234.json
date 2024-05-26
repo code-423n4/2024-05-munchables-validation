@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "0xhacksmithh",
+  "risk": "2",
+  "title": "Contest ReadMe says that Protocol supporting `fee-on-transfer` token but there are no code segment that handling this.",
+  "issueId": 234,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/234"
+}
