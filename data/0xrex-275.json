@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "0xrex",
+  "risk": "3",
+  "title": "Users locking with a duration beyond 3 days do not get minted MUNCH NFTs hence cannot earn points or claim MUNCH tokens",
+  "issueId": 275,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/275"
+}
