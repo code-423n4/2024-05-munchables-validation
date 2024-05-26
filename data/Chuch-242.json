@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "Chuch",
+  "risk": "2",
+  "title": "`LockManages.sol::_lock` uses `transferFrom()` instead of `safeTransferFrom()`",
+  "issueId": 242,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/242"
+}
