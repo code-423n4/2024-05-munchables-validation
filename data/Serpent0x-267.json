@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "Serpent0x",
+  "risk": "3",
+  "title": "Direct ERC20 operations without safety checks.",
+  "issueId": 267,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/267"
+}
