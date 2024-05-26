@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "Utsav",
+  "risk": "2",
+  "title": "`lockDuration` can be set before deposit leading to early unlocking of assets",
+  "issueId": 208,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/208"
+}
