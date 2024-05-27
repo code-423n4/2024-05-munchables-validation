@@ -146,3 +146,45 @@ The _lock function checks for the contract's allowance from the token owner and 
 
 
 ***
+
+## 5. Pricefeeds that had disapproved a price proposal can also approve it
+
+Links to affected code *
+
+https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b330c2157fe23da2a4807d/src/managers/LockManager.sol#L192-L197
+
+https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b330c2157fe23da2a4807d/src/managers/LockManager.sol#L224-L230
+
+### Impact
+
+The `approveUSDPrice` function doesn't check that the caller had not previously disapproved the price. This can lead to prices being updated without the actual needed consensus as it seems like the same price feed is double voting. If a contentious price is set and two price feed disapprove it, the same two can later on approve it, causing the price to reach the desired threshold, and for the update to be executed. Important to note that this also goes against the protcol's intended design as if a pricefeed had previously approved a price, they're [unable](https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b330c2157fe23da2a4807d/src/managers/LockManager.sol#L225) to disapprove it.
+```solidity
+    function approveUSDPrice(
+        uint256 _price
+    )
+        external
+        onlyOneOfRoles(
+            [
+                Role.PriceFeed_1,
+                Role.PriceFeed_2,
+                Role.PriceFeed_3,
+                Role.PriceFeed_4,
+                Role.PriceFeed_5
+            ]
+        )
+    {
+        if (usdUpdateProposal.proposer == address(0)) revert NoProposalError();
+        if (usdUpdateProposal.proposer == msg.sender)
+            revert ProposerCannotApproveError();
+        if (usdUpdateProposal.approvals[msg.sender] == _usdProposalId)
+            revert ProposalAlreadyApprovedError();
+        if (usdUpdateProposal.proposedPrice != _price)
+            revert ProposalPriceNotMatchedError();
+
+        usdUpdateProposal.approvals[msg.sender] = _usdProposalId;
+        usdUpdateProposal.approvalsCount++;
+      ...
+    }
+```
+
+***
