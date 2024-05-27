@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "jeremie",
+  "risk": "2",
+  "title": "In the _lock function, tokens with the same contract address will be locked with the last unlockTime.",
+  "issueId": 448,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/448"
+}
