@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "King_",
+  "risk": "2",
+  "title": "Locking tokens subsequent times by users increases lock duration for previous locks also",
+  "issueId": 565,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/565"
+}
