@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "0rpse",
+  "risk": "3",
+  "title": "Possible to reduce lockup time due to not updating `lastLockTime` in `setLockDuration`",
+  "issueId": 341,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/341"
+}
