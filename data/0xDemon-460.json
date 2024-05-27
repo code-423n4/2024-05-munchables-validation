@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "0xDemon",
+  "risk": "2",
+  "title": "Users cannot set the token `lockDuration < minLockDuration` (30 days) if they directly call the `lock()` function or set the `lockDuration == 0`",
+  "issueId": 460,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/460"
+}
