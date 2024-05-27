@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "MrValioBg",
+  "risk": "2",
+  "title": "Updating multiple contract's USD price can lead to compromising the USD price for some contracts.",
+  "issueId": 539,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/539"
+}
