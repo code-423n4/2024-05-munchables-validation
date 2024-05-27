@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "AgileJune",
+  "risk": "2",
+  "title": "User's locked tokens can't be unlocked due to unsafe casting to uint32 of block.timestamp",
+  "issueId": 345,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/345"
+}
