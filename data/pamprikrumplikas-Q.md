@@ -1,4 +1,4 @@
-# [01] Add input validation for the `setUSDThresholds` function
+# [01] Add input validation for function `setUSDThresholds`
 
 The `setUSDTresholds` function does not perform input validation on `the _approve` and `_disapprove` parameters:
 
@@ -67,7 +67,7 @@ Rogue PriceFeed can continuously propose new (unacceptable) USD prices by repeat
 To mitigate the issue, implement a cooldown period or limit the frequency of proposals by the same address.
 
 
-[03] `proposeUSDPrice` should emit the token address(es) the proposal applies to
+# [03] Function `proposeUSDPrice` should emit the token address(es) the proposal applies to
 
 The `proposeUSDPrice` function enables PriceFeeds to propose new USD prices, and as input parameters, accepts the proposed price `_price` and `_contracts`, an array of tokens the proposal applies to.
 
@@ -78,4 +78,38 @@ However, upon a successful call to this function, only the address of the propos
 ```
 
 To mitigate the issue, add the `_contracts` array as the 3rd emit parameter.
+
+# [04] Function `approveUSDPrice` does not check whether voter (a PrideFeed) already diapproved the proposal or not
+
+Function `approveUSDPrice` performs the following checks to decide whether an approval is valid/acceptable:
+
+```javascript
+        if (usdUpdateProposal.proposer == address(0)) revert NoProposalError();
+        if (usdUpdateProposal.proposer == msg.sender)
+            revert ProposerCannotApproveError();
+        if (usdUpdateProposal.approvals[msg.sender] == _usdProposalId)
+            revert ProposalAlreadyApprovedError();
+        if (usdUpdateProposal.proposedPrice != _price)
+            revert ProposalPriceNotMatchedError();
+```
+
+It checks whether the the voter already approved the proposal, but it does not check whether it previously disapproved the same proposal. Hence, it is possible for a PriceFeed to disapprove, and then approve the same proposal.
+
+(In contract, `disapproveUSDPrice` does check whether the PriceFeed that is voting has previously approved and also whether it previously disapproved the proposal.)
+
+To mitigate the issue, add an additional check to function `approveUSDPrice`:
+
+```diff
+```javascript
+        if (usdUpdateProposal.proposer == address(0)) revert NoProposalError();
+        if (usdUpdateProposal.proposer == msg.sender)
+            revert ProposerCannotApproveError();
+        if (usdUpdateProposal.approvals[msg.sender] == _usdProposalId)
+            revert ProposalAlreadyApprovedError();
++       if (usdUpdateProposal.disapprovals[msg.sender] == _usdProposalId)
++           revert ProposalAlreadyDisapprovedError();
+        if (usdUpdateProposal.proposedPrice != _price)
+            revert ProposalPriceNotMatchedError();
+```
+```
 
