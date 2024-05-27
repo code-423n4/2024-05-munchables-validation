@@ -1,0 +1,1 @@
+In the code at https://github.com/code-423n4/2024-05-munchables/blob/main/src/managers/LockManager.sol#L101, should start be checked instead of end?
