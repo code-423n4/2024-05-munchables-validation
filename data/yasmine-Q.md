@@ -1,5 +1,7 @@
 # Title : Confusing LockDuration Event When No Tokens Configured
 
+## Risk : Low
+
 ## Impact
 In `LockManager::setLockDuration` function, if `configuredTokensLength` is 0, the for loop is skipped and `LockDuration` event is emited, which could result to confusion. 
 
