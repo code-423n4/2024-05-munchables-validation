@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "honey-k12",
+  "risk": "2",
+  "title": "Use of deprecated `transfer()` in `LockManager.sol::unlock()`",
+  "issueId": 522,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/522"
+}
