@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "debo",
+  "risk": "2",
+  "title": "Dubious typecast in the functions called setLockDuration & _lock proposeUSDPrice & configureLockDrop and unlock function",
+  "issueId": 535,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/535"
+}
