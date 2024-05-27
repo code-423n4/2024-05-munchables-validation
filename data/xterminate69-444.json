@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "xterminate69",
+  "risk": "2",
+  "title": "Centralization in function `setUSDThresholds` can cause votes to be obsolete",
+  "issueId": 444,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/444"
+}
