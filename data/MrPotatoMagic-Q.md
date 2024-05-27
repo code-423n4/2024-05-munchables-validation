@@ -24,6 +24,9 @@ The report consists of low-severity risk issues, governance risk issues arising 
 | [L-08] | Incorrect validation in function approveUSDPrice() allows price feed roles to both approve and disapprove for a proposal Link to instance |
 | [L-09] | Missing minLockDuration check in function setLockDuration()                                                                               |
 | [L-10] | Function getLockedWeightedValue() does not account for duration in schibbles calculation                                                  |
+| [L-11] | Negative rebase can tap into other user's tokens when a user unlocks                                                                      |
+| [L-12] | Users can force receive schnibbles by making 0 value lock() or lockOnBehalfOf() calls                                                                         |
+| [L-13] | Disallow users from extending their lock durations for inactive tokens                                                                    |
 
 ### [L-01] Missing setter function to change config storage contract in LockManager
 
@@ -282,6 +285,56 @@ File: LockManager.sol
 504:         _lockedWeightedValue = lockedWeighted;
 505:     }
 ```
+
+### [L-11] Negative rebase can tap into other user's tokens when a user unlocks
+
+[Link to instance](https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b330c2157fe23da2a4807d/src/managers/LockManager.sol#L416)
+
+If the configured token contract being used is a rebasing token that negatively rebases, the protocol can cause loss of funds to users. This is because when the overall balance of the contract decreases, the quantity being used for withdrawals on Line 424 is based on the time the the tokens were locked. Due to this, the user unlocking can receive more tokens than needed, causing loss to other users.
+
+The blast docs [here](https://docs.blast.io/building/guides/eth-yield) mention that the rebasing for ETH, WETH and USDB is increasing and never decreases. But if future tokens that rebase negatively exist, this issue exists.
+```solidity
+File: LockManager.sol
+409:     function unlock(
+410:         address _tokenContract,
+411:         uint256 _quantity
+412:     ) external notPaused nonReentrant {
+413:         LockedToken storage lockedToken = lockedTokens[msg.sender][
+414:             _tokenContract
+415:         ];
+416:         if (lockedToken.quantity < _quantity)
+417:             revert InsufficientLockAmountError();
+418:         if (lockedToken.unlockTime > uint32(block.timestamp))
+419:             revert TokenStillLockedError();
+420: 
+421:         // force harvest to make sure that they get the schnibbles that they are entitled to
+422:         accountManager.forceHarvest(msg.sender);
+423: 
+424:         lockedToken.quantity -= _quantity;
+425: 
+426:         // send token
+427:         if (_tokenContract == address(0)) {
+428:             payable(msg.sender).transfer(_quantity);
+429:         } else {
+430:             IERC20 token = IERC20(_tokenContract);
+431:             token.transfer(msg.sender, _quantity);
+432:         }
+433: 
+434:         emit Unlocked(msg.sender, _tokenContract, _quantity);
+435:     }
+```
+
+### [L-12] Users can force receive schnibbles by making 0 value lock() or lockOnBehalfOf() calls
+
+[Link to instance](https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b330c2157fe23da2a4807d/src/managers/LockManager.sol#L311)
+
+As discussed in my only High-severity issue, it is possible for anyone to make 0 quantity lock() or lockOnBehalfOf() calls. This allows users or an attacker to force users to receive their schnibbles at any time without requiring to lock tokens or unlock them.
+
+### [L-13] Disallow users from extending their lock durations for inactive tokens
+
+[Link to instance](https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b330c2157fe23da2a4807d/src/managers/LockManager.sol#L245)
+
+Users should not be allowed to extend durations for their existing locks for tokens that have been deactivated by the admin. The users should instead be forced to leave the system with the token for safer side since tokens can be deactivated for any reason and should not exist in the LockManager for long once deactivated.
 
 ## Governance risks
 
