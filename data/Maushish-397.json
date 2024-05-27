@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "Maushish",
+  "risk": "3",
+  "title": "No check for `minLockDuration` in [_setLockDuration](https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b330c2157fe23da2a4807d/src/managers/LockManager.sol#L245) function.",
+  "issueId": 397,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/397"
+}
