@@ -100,7 +100,6 @@ It checks whether the the voter already approved the proposal, but it does not c
 To mitigate the issue, add an additional check to function `approveUSDPrice`:
 
 ```diff
-```javascript
         if (usdUpdateProposal.proposer == address(0)) revert NoProposalError();
         if (usdUpdateProposal.proposer == msg.sender)
             revert ProposerCannotApproveError();
@@ -111,5 +110,81 @@ To mitigate the issue, add an additional check to function `approveUSDPrice`:
         if (usdUpdateProposal.proposedPrice != _price)
             revert ProposalPriceNotMatchedError();
 ```
+
+
+# [05] Function `approveUSDPrice` has a redundant check and unnecesarily checks whether proposer already approved the proposal
+
+Function `approveUSDPrice` performs the following checks to decide whether an approval is valid/acceptable:
+
+```javascript
+        if (usdUpdateProposal.proposer == address(0)) revert NoProposalError();
+        if (usdUpdateProposal.proposer == msg.sender)
+            revert ProposerCannotApproveError();
+        if (usdUpdateProposal.approvals[msg.sender] == _usdProposalId)
+            revert ProposalAlreadyApprovedError();
+        if (usdUpdateProposal.proposedPrice != _price)
+            revert ProposalPriceNotMatchedError();
 ```
 
+The 2nd check, i.e.
+
+```javascript
+        if (usdUpdateProposal.proposer == msg.sender)
+            revert ProposerCannotApproveError();
+```
+
+is unneccessary, as the 3rd check covers this. (When a proposal is made by calling `proposeUSDPrice`, the proposer is automatically considered as one of the approvers:
+
+```javascript
+    function proposeUSDPrice(
+        uint256 _price,
+        address[] calldata _contracts
+    )
+        external
+        onlyOneOfRoles(
+            [
+                Role.PriceFeed_1,
+                Role.PriceFeed_2,
+                Role.PriceFeed_3,
+                Role.PriceFeed_4,
+                Role.PriceFeed_5
+            ]
+        )
+    {
+        if (usdUpdateProposal.proposer != address(0))
+            revert ProposalInProgressError();
+        if (_contracts.length == 0) revert ProposalInvalidContractsError();
+
+        delete usdUpdateProposal;
+
+        // Approvals will use this because when the struct is deleted the approvals remain
+        ++_usdProposalId;
+
+        usdUpdateProposal.proposedDate = uint32(block.timestamp);
+        usdUpdateProposal.proposer = msg.sender;
+        usdUpdateProposal.proposedPrice = _price;
+        usdUpdateProposal.contracts = _contracts;
+@>      usdUpdateProposal.approvals[msg.sender] = _usdProposalId;
+@>      usdUpdateProposal.approvalsCount++;
+
+        emit ProposedUSDPrice(msg.sender, _price);
+    }
+```
+
+
+# [06] Functions `approveUSDPrice` and `disapproveUSDPrice`  should emit the price (and the array of contracts the proposal applies to)
+
+Upon a successful call to `approveUSDPrice` and `disapproveUSDPrice`, the following events are emitted, respectively:
+
+```javascript
+        emit ApprovedUSDPrice(msg.sender);
+```
+
+and 
+
+```javascript
+            emit RemovedUSDProposal();
+
+```
+
+Extend these event emissions by adding 2 new event parameters to them: the prosed price and the array of contracts the proposal applies to.
