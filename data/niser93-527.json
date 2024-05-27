@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "niser93",
+  "risk": "3",
+  "title": "Locking native tokens using a non-EOA account makes funds unrecoverable",
+  "issueId": 527,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/527"
+}
