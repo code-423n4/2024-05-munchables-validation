@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "turvy_fuzz",
+  "risk": "3",
+  "title": "attacker can increase the unlocktime of any user without needing permission",
+  "issueId": 603,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/603"
+}
