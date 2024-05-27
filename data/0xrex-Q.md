@@ -1,4 +1,39 @@
-## [L-01] Users who go over the max lock duration by mistake cannot reset/reduce their lock durations in order to lock tokens as it would revert
+## [L-01] Any change for the `accountManager` leaves users having no accounts in the new `accountManager` hence cannot lock more tokens or unlock previously locked tokens
+
+[LockManager.sol#L85-L87](https://github.com/code-423n4/2024-05-munchables/blob/main/src/managers/LockManager.sol#L85-L87)
+[LockManager.sol#L66-L68](https://github.com/code-423n4/2024-05-munchables/blob/main/src/managers/LockManager.sol#L66-L68)
+
+```solidity
+function _reconfigure() internal {
+        accountManager = IAccountManager(
+            configStorage.getAddress(StorageKey.AccountManager)
+        );
+
+        migrationManager = IMigrationManager(
+            configStorage.getAddress(StorageKey.MigrationManager)
+        );
+
+        snuggeryManager = ISnuggeryManager(
+            configStorage.getAddress(StorageKey.SnuggeryManager)
+        );
+
+        nftOverlord = INFTOverlord(
+            configStorage.getAddress(StorageKey.NFTOverlord)
+        );
+
+        super.__BaseBlastManager_reconfigure();
+    }
+
+    function configUpdated() external override onlyConfigStorage {
+        _reconfigure();
+    }
+```
+
+Calling the `configUpdated` function when users have already locked tokens prior will create a scenario where the users who locked before and hence had accounts in the previous accounting manager cannot now lock more or unlock because the new accounting manager set doesn't recognize their previously locked tokens.
+
+Perhaps, expose a function for users to migrate their stakes from an accounting manager to a new one when the `accountManager` changes.
+
+## [L-02] Users who go over the max lock duration by mistake cannot reset/reduce their lock durations in order to lock tokens as it would revert
 
 When a user goes over the max lock duration by mistake, they are forced to make a new account with another wallet in order to lock tokens. 
 
@@ -38,7 +73,7 @@ function _lock(
 
 Enforce users cannot breach the max duration in the first place by checking the new duration plus the previously set one doesn't exceed the max before mutating the users' `playerSettings` duration
 
-## [L-02] Locking will not be possible past 2106 as uint32 would overflow
+## [L-03] Locking will not be possible past 2106 as uint32 would overflow
 
 This would affect the implementations of setting up a lock duration, locking and unlocking tokens.
 
@@ -61,7 +96,7 @@ lockedToken.lastLockTime = uint32(block.timestamp);
 
 Using a bigger data size type would be sufficient e.g uint64 or 48.
 
-## [L-03] USDB, ETH, WETH etc can both have the same price in a certain case
+## [L-04] USDB, ETH, WETH etc can both have the same price in a certain case
 
 Calling `proposeUSDPrice()` will set all the supported token's price to the same thing even though these tokens in reality don't have the same price e.g USDB is $1 and WETH is $3700
 
@@ -95,7 +130,7 @@ function _execUSDPriceUpdate() internal {
 
 Instead of updating all of the prices in one go, update specific token's price and use the `proposeUSDPrice()` argument `address[] calldata _contracts` to determine which supported token price to update.
 
-## [L-04] Use safeTransfer for USDB & WETH or ERC20 token unlocks
+## [L-05] Use safeTransfer for USDB & WETH or ERC20 token unlocks
 
 [LockManager.sol#L421-L424](https://github.com/code-423n4/2024-05-munchables/blob/main/src/managers/LockManager.sol#L421-L424)
 
