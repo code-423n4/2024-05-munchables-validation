@@ -1,0 +1,5 @@
+The current order of event emission in the `approveUSDPrice` function can lead to confusion in the event logs. Specifically, the `ApprovedUSDPrice` event is emitted after the `_execUSDPriceUpdate` function, which emits `USDPriceUpdated` events. This can make it difficult to trace the sequence of approvals and updates in the event logs. Moving the `emit ApprovedUSDPrice(msg.sender);` statement above the threshold check ensures a clear and consistent event sequence.
+Link to referenced sections of code in GitHub:
+- https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b330c2157fe23da2a4807d/src/managers/LockManager.sol#L206
+- https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b330c2157fe23da2a4807d/src/managers/LockManager.sol#L203
+- https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b330c2157fe23da2a4807d/src/managers/LockManager.sol#L518
