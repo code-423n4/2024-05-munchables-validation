@@ -1,4 +1,4 @@
-The `approveUSDPrice` function approves any proposed proposal. However, it does not verify if the proposal has already been disapproved. So the `Price_Feed` role can accidently approve a disapproved proposal and accidently up a proposal.
+The `approveUSDPrice` function can approve any proposed proposal. However, it does not verify if the proposal has already been disapproved. So the `Price_Feed` role can accidently approve a disapproved proposal causing a down approval into up.
 
 ## Mitigation
 Please add this in `approveUSDPrice` function.
