@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "aua_oo7",
+  "risk": "3",
+  "title": "Lack of Validation for `_price` Parameter in `proposeUSDPrice` Function",
+  "issueId": 552,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/552"
+}
