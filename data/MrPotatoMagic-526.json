@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "MrPotatoMagic",
+  "risk": "3",
+  "title": "Attacker can keep on extending user time locks with 0 quantity lockOnBehalf() calls",
+  "issueId": 526,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/526"
+}
