@@ -77,3 +77,78 @@ For reference, `LockManager::unlock` function is as follows ( [https://github.co
 Here, it can be seen that `lockedToken.remainder` is not considered while unlocking the tokens.
 
 Ideally, there should be a function to withdraw the `remainder` tokens from the contract.
+
+## [L-02] Calculation in `getLockedWeightedValue` has less precision.
+
+The `LockManager::getLockedWeightedValue` function is as follows ( [https://github.com/code-423n4/2024-05-munchables/blob/main/src/managers/LockManager.sol#L461](https://github.com/code-423n4/2024-05-munchables/blob/main/src/managers/LockManager.sol#L461) ):
+
+```solidity
+    function getLockedWeightedValue(
+        address _player
+    ) external view returns (uint256 _lockedWeightedValue) {
+        uint256 lockedWeighted = 0;
+        uint256 configuredTokensLength = configuredTokenContracts.length;
+        for (uint256 i; i < configuredTokensLength; i++) {
+            if (
+                lockedTokens[_player][configuredTokenContracts[i]].quantity >
+                0 &&
+                configuredTokens[configuredTokenContracts[i]].active
+            ) {
+                // We are assuming all tokens have a maximum of 18 decimals and that USD Price is denoted in 1e18
+                uint256 deltaDecimal = 10 **
+                    (18 -
+                        configuredTokens[configuredTokenContracts[i]].decimals);
+                lockedWeighted +=
+                    (deltaDecimal *
+                        lockedTokens[_player][configuredTokenContracts[i]]
+                            .quantity *
+                        configuredTokens[configuredTokenContracts[i]]
+                            .usdPrice) /
+@-->                1e18;
+            }
+        }
+
+        _lockedWeightedValue = lockedWeighted;
+    }
+```
+
+Here, right hand side of `lockedWeighted` is divided by `1e18` in the loop ( rounding down each division ) causing loss of precision in the calculation, whereas dividing the final result by `1e18` outside the loop will give more precision.
+
+The calculation can be done as follows:
+
+```diff
+    function getLockedWeightedValue(
+        address _player
+    ) external view returns (uint256 _lockedWeightedValue) {
+        uint256 lockedWeighted = 0;
+        uint256 configuredTokensLength = configuredTokenContracts.length;
+        for (uint256 i; i < configuredTokensLength; i++) {
+            if (
+                lockedTokens[_player][configuredTokenContracts[i]].quantity >
+                0 &&
+                configuredTokens[configuredTokenContracts[i]].active
+            ) {
+                // We are assuming all tokens have a maximum of 18 decimals and that USD Price is denoted in 1e18
+                uint256 deltaDecimal = 10 **
+                    (18 -
+                        configuredTokens[configuredTokenContracts[i]].decimals);
+-               lockedWeighted +=
+-                   (deltaDecimal *
+-                       lockedTokens[_player][configuredTokenContracts[i]]
+-                           .quantity *
+-                       configuredTokens[configuredTokenContracts[i]]
+-                           .usdPrice) /
+-               1e18;
++               lockedWeighted +=
++                   (deltaDecimal *
++                       lockedTokens[_player][configuredTokenContracts[i]]
++                           .quantity *
++                       configuredTokens[configuredTokenContracts[i]]
++                           .usdPrice);
+            }
+        }
+
+-        _lockedWeightedValue = lockedWeighted;
++        _lockedWeightedValue = lockedWeighted / 1e18;
+    }
+```
