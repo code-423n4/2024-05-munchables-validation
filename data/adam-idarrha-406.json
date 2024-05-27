@@ -1,0 +1,8 @@
+{
+  "contest": 379,
+  "handle": "adam-idarrha",
+  "risk": "2",
+  "title": "Use call instead of transfer",
+  "issueId": 406,
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/406"
+}
