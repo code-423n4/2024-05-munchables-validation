@@ -84,7 +84,7 @@ The following check could be added before the event ```ProposedUSDPrice```:
     {
         if (usdUpdateProposal.proposer != address(0))
             revert ProposalInProgressError();
-+       /// New condition here to check for price not equal 0
++       /// New condition here to check for price != 0
 +       if (_price == 0) revert PriceCannotBeZeroError();
         if (_contracts.length == 0) revert ProposalInvalidContractsError();
         delete usdUpdateProposal;
@@ -115,7 +115,7 @@ Arrays can only be set by one of the trusted roles.
 
 **Impact: LOW**
 
-**Gas Costs**: Each iteration over the ```_contracts``` array involves updating the USD price for a contract, which consumes gas. A very large array could lead to excessive gas costs, potentially making the transaction prohibitively expensive or even exceeding block gas limits, causing the transaction to fail.
+**Gas Costs**: Each iteration over the _contracts array involves updating the USD price for a contract, which consumes gas. A very large array could lead to excessive gas costs, potentially making the transaction prohibitively expensive or even exceeding block gas limits, causing the transaction to fail.
 
 ## Proof of Concept
 https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b330c2157fe23da2a4807d/src/managers/LockManager.sol#L142
@@ -203,3 +203,58 @@ The following check could be added before the event ```ProposedUSDPrice```:
         emit ProposedUSDPrice(msg.sender, _price);
     }
 ```
+
+# LOW-3: ```_duration``` is a ```uint256``` but being cast to ```uint32``` can lead to an incorrect and potentially much smaller duration being set
+
+Links to affected code:
+https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b330c2157fe23da2a4807d/src/managers/LockManager.sol#L245
+
+## Impact
+
+**Likelihood: MEDIUM**
+
+**Impact: LOW**
+There is a minimum lock duration ```minLockDuration```.
+
+If ```_duration``` is larger than ```2^32 - 1```, the value will wrap around when cast to ```uint32```, leading to an incorrect and potentially much smaller duration being set. This could cause unexpected behavior in the locking logic, such as setting a lock duration that is shorter than intended or failing checks unexpectedly.
+
+## Proof of Concept
+https://github.com/code-423n4/2024-05-munchables/blob/57dff486c3cd905f21b330c2157fe23da2a4807d/src/managers/LockManager.sol#L245
+
+In ```LockManager.sol::setLockDuration``` the ```_duration``` is a ```uint256``` but then it's cast to ```uint32```:
+
+```solidity
+/// @inheritdoc ILockManager
+    function setLockDuration(uint256 _duration) external notPaused {
+        if (_duration > configStorage.getUint(StorageKey.MaxLockDuration))
+            revert MaximumLockDurationError();
+
+        playerSettings[msg.sender].lockDuration = uint32(_duration);
+        // update any existing lock
+        uint256 configuredTokensLength = configuredTokenContracts.length;
+        for (uint256 i; i < configuredTokensLength; i++) {
+            address tokenContract = configuredTokenContracts[i];
+            if (lockedTokens[msg.sender][tokenContract].quantity > 0) {
+                // check they are not setting lock time before current unlocktime
+                if (
+                    uint32(block.timestamp) + uint32(_duration) <
+                    lockedTokens[msg.sender][tokenContract].unlockTime
+                ) {
+                    revert LockDurationReducedError();
+                }
+
+                uint32 lastLockTime = lockedTokens[msg.sender][tokenContract]
+                    .lastLockTime;
+                lockedTokens[msg.sender][tokenContract].unlockTime =
+                    lastLockTime +
+                    uint32(_duration);
+            }
+        }
+```
+
+## Tools Used
+Manual review.
+
+## Recommended Mitigation Steps
+
+To resolve this issue, consider using a larger integer type for durations throughout the contract if durations longer than ```2^32 - 1``` seconds (approximately 136 years) need to be supported. Alternatively, ensure that the input _duration is validated against the maximum uint32 value before casting, though this approach still limits the maximum duration.
