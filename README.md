@@ -10,7 +10,7 @@ Unless otherwise discussed, this repo will be made public after audit completion
 
 ### View assigned issues
 
-To view your assigned issues, use the `Assignee` filter on the Issues screen, and type your username to located it. This should produce a filtered issue list that you can reference throughout the validation process.
+To view your assigned issues, use the `Assignee` filter on the Issues screen, and type your username to locate it. This should produce a filtered issue list that you can reference throughout the validation process.
 
 <img width="370" alt="image" src="https://github.com/code-423n4/2024-05-loop-validation/assets/84729667/6c1ef81c-2ceb-4505-8f61-3b14473d24ec">
 
