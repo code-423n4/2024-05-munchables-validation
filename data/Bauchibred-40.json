@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Protocol assumes support for `balance changing outside transfers` tokens but in reality using this would break protocol",
   "issueId": 40,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/40"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/40",
+  "validatedIssueId": 277,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/277"
 }
