@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "WETH compatibility issue on Blast chain",
   "issueId": 182,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/182"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/182",
+  "validatedIssueId": 345,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/345"
 }
