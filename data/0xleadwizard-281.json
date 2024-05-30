@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Due to incorrect implementation, user can decrease the lock duration",
   "issueId": 281,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/281"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/281",
+  "validatedIssueId": 196,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/196"
 }
