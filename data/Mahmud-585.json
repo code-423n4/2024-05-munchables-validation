@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Issue with Unlock Time Calculation in `setLockDuration` Function",
   "issueId": 585,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/585"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/585",
+  "validatedIssueId": 209,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/209"
 }
