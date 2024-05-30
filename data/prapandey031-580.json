@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Users can reduce unlock time of locked up tokens that are previously set",
   "issueId": 580,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/580"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/580",
+  "validatedIssueId": 224,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/224"
 }
