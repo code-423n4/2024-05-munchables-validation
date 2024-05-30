@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Function setLockDuration() incorrectly validates new duration against unlock time",
   "issueId": 515,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/515"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/515",
+  "validatedIssueId": 204,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/204"
 }
