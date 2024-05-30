@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Protocol doesn't follow documentation. While docs states it supports high decimal tokens - protocol will revert when high decimal tokens are being used",
   "issueId": 183,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/183"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/183",
+  "validatedIssueId": 418,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/418"
 }
