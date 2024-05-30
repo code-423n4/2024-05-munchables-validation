@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Unchecked transfer on the unlock function within the LockManager contract because it does not use SAFERC20 IERC20.safeTransfer instead it is incorrectly using IERC20.transfer",
   "issueId": 246,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/246"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/246",
+  "validatedIssueId": 268,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/268"
 }
