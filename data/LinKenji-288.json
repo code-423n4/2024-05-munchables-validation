@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Overwriting of Existing Locks with New Lock Calls Leads to Unexpected Behavior and Potential Data Loss",
   "issueId": 288,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/288"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/288",
+  "validatedIssueId": 256,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/256"
 }
