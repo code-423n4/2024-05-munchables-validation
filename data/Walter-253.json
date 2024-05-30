@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Denial-of-Service (DoS) Attack on Schnibbles Harvest",
   "issueId": 253,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/253"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/253",
+  "validatedIssueId": 169,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/169"
 }
