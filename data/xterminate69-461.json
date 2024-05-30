@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Token configure can accept tokens with more or less than 18 decimals",
   "issueId": 461,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/461"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/461",
+  "validatedIssueId": 375,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/375"
 }
