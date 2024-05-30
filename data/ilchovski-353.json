@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Wrong handling of rebasing tokens (USDB)",
   "issueId": 353,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/353"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/353",
+  "validatedIssueId": 367,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/367"
 }
