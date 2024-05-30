@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Incorrect Assignment of tokenOwner Variable in lockOnBehalf Function",
   "issueId": 216,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/216"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/216",
+  "validatedIssueId": 335,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/335"
 }
