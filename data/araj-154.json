@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Malicious user can `greif` an honest user by `depositing` asset on `behalf` of honest user",
   "issueId": 154,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/154"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/154",
+  "validatedIssueId": 157,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/157"
 }
