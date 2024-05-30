@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "`lockOnBehalf` allows anyone to lock the funds  other players' indefinitely",
   "issueId": 505,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/505"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/505",
+  "validatedIssueId": 124,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/124"
 }
