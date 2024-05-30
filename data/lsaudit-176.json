@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Thresholds for approving and disapproving proposals cannot be properly set because of the incorrect datatype",
   "issueId": 176,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/176"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/176",
+  "validatedIssueId": 341,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/341"
 }
