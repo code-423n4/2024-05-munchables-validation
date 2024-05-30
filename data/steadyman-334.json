@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Reduce the previously set lock time.",
   "issueId": 334,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/334"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/334",
+  "validatedIssueId": 198,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/198"
 }
