@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "proposal  approve pass rate and disapprove pass rate are different ",
   "issueId": 323,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/323"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/323",
+  "validatedIssueId": 316,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/316"
 }
