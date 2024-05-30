@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Malicious can dos other user's unlock function by lock 1 wei token",
   "issueId": 321,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/321"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/321",
+  "validatedIssueId": 131,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/131"
 }
