@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Lock duration can be manipulated",
   "issueId": 608,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/608"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/608",
+  "validatedIssueId": 192,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/192"
 }
