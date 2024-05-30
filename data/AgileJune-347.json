@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Users can't lock assets because of overflow, so protocol gets insolvency for a while",
   "issueId": 347,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/347"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/347",
+  "validatedIssueId": 381,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/381"
 }
