@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "User can reduce unlockTime for Locks with tokens",
   "issueId": 79,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/79"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/79",
+  "validatedIssueId": 88,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/88"
 }
