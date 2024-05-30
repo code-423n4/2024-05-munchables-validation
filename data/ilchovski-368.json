@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Higher decimal tokens will DOS the the contract",
   "issueId": 368,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/368"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/368",
+  "validatedIssueId": 249,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/249"
 }
