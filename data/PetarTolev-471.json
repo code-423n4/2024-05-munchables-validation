@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "The `lockedToken.quantity` can be unlinked from `nftOverlord.unrevealedNFTs` (quantity will be greater) when a user lock outside of the `lockdrop`, resulting in fewer received `MunchableNFTs`",
   "issueId": 471,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/471"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/471",
+  "validatedIssueId": 332,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/332"
 }
