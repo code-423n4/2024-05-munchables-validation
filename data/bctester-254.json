@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "User Funds Can Be Permanently Locked",
   "issueId": 254,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/254"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/254",
+  "validatedIssueId": 159,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/159"
 }
