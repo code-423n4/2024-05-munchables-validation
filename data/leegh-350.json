@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Users can reduce their lockup times.",
   "issueId": 350,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/350"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/350",
+  "validatedIssueId": 203,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/203"
 }
