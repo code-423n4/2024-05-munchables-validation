@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "The protocol does not check for a zero duration",
   "issueId": 239,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/239"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/239",
+  "validatedIssueId": 301,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/301"
 }
