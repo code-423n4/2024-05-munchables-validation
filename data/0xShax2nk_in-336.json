@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Automatic Approval by Proposer in proposeUSDPrice Function Reduces Required Approvals ",
   "issueId": 336,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/336"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/336",
+  "validatedIssueId": 329,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/329"
 }
