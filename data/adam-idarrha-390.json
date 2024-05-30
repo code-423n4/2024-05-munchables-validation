@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Users Can Prematurely Unlock Funds",
   "issueId": 390,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/390"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/390",
+  "validatedIssueId": 226,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/226"
 }
