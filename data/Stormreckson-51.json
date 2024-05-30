@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "configureLockdrop does not set the MinlockDuration allowing users to unlock at anytime",
   "issueId": 51,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/51"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/51",
+  "validatedIssueId": 307,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/307"
 }
