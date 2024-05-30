@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Read-Only-Re-entrancy if read in other functions starting from getPlayerSettings",
   "issueId": 501,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/501"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/501",
+  "validatedIssueId": 397,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/397"
 }
