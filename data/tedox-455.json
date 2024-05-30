@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Contract does not account for fee on transfer tokens",
   "issueId": 455,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/455"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/455",
+  "validatedIssueId": 405,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/405"
 }
