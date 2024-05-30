@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "User cannot withdraw his remainder",
   "issueId": 151,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/151"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/151",
+  "validatedIssueId": 275,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/275"
 }
