@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Inconsistent Token Value Handling in `_lock` Function ",
   "issueId": 595,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/595"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/595",
+  "validatedIssueId": 384,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/384"
 }
