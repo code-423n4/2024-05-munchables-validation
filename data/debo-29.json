@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Pess-Read-Only-Reentrancy",
   "issueId": 29,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/29"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/29",
+  "validatedIssueId": 286,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/286"
 }
