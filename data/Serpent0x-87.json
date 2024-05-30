@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Missing Setter Function Initialization in LockManager Constructo",
   "issueId": 87,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/87"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/87",
+  "validatedIssueId": 279,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/279"
 }
