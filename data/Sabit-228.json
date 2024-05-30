@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "When _tokenContract is not zero address, there is no check if msg.value matches quantity, msg.value is 0, or allowance is less than quantity",
   "issueId": 228,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/228"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/228",
+  "validatedIssueId": 383,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/383"
 }
