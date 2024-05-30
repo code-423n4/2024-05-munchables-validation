@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "A malicious user can call the lockOnBehalf function with a valid _onBehalfOf address and a _quantity of zero, effectively extending the lock duration of the _onBehalfOf address without actually locking any tokens",
   "issueId": 232,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/232"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/232",
+  "validatedIssueId": 118,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/118"
 }
