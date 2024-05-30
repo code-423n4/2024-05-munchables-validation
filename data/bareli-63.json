@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "wrong \"approvalsCount\"  in LockManager",
   "issueId": 63,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/63"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/63",
+  "validatedIssueId": 377,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/377"
 }
