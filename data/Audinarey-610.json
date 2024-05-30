@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "`LockManager` does not handle tokens that do not revert on failure",
   "issueId": 610,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/610"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/610",
+  "validatedIssueId": 108,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/108"
 }
