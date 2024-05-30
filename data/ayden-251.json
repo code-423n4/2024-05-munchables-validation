@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "The minLockDuration check can be bypassed by users.",
   "issueId": 251,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/251"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/251",
+  "validatedIssueId": 174,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/174"
 }
