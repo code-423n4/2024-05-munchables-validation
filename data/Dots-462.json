@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Function getLockedWeightedValue will become unusable if tokens with more than 18 decimals are added to the protocol",
   "issueId": 462,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/462"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/462",
+  "validatedIssueId": 246,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/246"
 }
