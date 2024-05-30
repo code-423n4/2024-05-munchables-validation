@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "`unlockTime` is mistakenly reduced while updating lockDuration in `setLockDuration` function",
   "issueId": 202,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/202"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/202",
+  "validatedIssueId": 238,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/238"
 }
