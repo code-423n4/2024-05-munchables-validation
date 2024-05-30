@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Incorrect Weighted Average Calculation in getLockedWeightedValue",
   "issueId": 277,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/277"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/277",
+  "validatedIssueId": 323,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/323"
 }
