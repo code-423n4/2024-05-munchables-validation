@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "`lockOnBehalf` can be used to extend other users' lock perpetually",
   "issueId": 48,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/48"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/48",
+  "validatedIssueId": 166,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/166"
 }
