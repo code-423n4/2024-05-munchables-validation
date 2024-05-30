@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Uniform USD Price Update for Multiple Tokens in `_execUSDPriceUpdate` Function",
   "issueId": 605,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/605"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/605",
+  "validatedIssueId": 271,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/271"
 }
