@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "High 01 User Can Manipulate Unlock Time",
   "issueId": 272,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/272"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/272",
+  "validatedIssueId": 227,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/227"
 }
