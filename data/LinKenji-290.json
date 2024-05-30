@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Insufficient Condition in `onlyConfiguredToken` Modifier May Cause Unintended Reverts for Configured Tokens with Zero `nftCost`",
   "issueId": 290,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/290"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/290",
+  "validatedIssueId": 284,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/284"
 }
