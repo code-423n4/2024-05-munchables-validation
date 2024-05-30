@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Duplicate Token Contracts in `configuredTokenContracts` Array Due to Flawed Logic in `configureToken` Function",
   "issueId": 292,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/292"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/292",
+  "validatedIssueId": 262,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/262"
 }
