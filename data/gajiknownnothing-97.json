@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Incompatible with fee-on-transfer tokens",
   "issueId": 97,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/97"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/97",
+  "validatedIssueId": 513,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/513"
 }
