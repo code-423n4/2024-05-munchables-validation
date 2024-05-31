@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "The missing assertion of a boolean return value of `transferFrom` allows draining the whole market of a token if the token doesn't revert on failures, but just returns \"false\"",
   "issueId": 37,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/37"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/37",
+  "validatedIssueId": 530,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/530"
 }
