@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "A User can Approve the proposed Price even though he has disapproved before and no decrement is done for disapprovalCounts.",
   "issueId": 491,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/491"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/491",
+  "validatedIssueId": 489,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/489"
 }
