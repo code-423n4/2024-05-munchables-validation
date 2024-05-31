@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "A single Role.PriceFeed_X can both disapprove and approve the same proposal",
   "issueId": 503,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/503"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/503",
+  "validatedIssueId": 475,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/475"
 }
