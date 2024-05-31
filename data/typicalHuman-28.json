@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "The PriceFeed can block the update of the price by creating a proposal immediately after the rejection of the previous one.",
   "issueId": 28,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/28"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/28",
+  "validatedIssueId": 432,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/432"
 }
