@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Unchecked Token Transfer",
   "issueId": 130,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/130"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/130",
+  "validatedIssueId": 520,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/520"
 }
