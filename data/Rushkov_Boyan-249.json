@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Possible approvals of disproven price proposals",
   "issueId": 249,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/249"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/249",
+  "validatedIssueId": 509,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/509"
 }
