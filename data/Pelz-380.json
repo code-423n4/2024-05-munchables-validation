@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Fee-On-Transfer Tokens Are Not Supported",
   "issueId": 380,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/380"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/380",
+  "validatedIssueId": 516,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/516"
 }
