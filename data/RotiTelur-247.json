@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Stalemate Could Happen and No New Proposal Is Able to Be Made",
   "issueId": 247,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/247"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/247",
+  "validatedIssueId": 466,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/466"
 }
