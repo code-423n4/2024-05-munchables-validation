@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "value of lockedToken.remainder is not reduced to zero even when the user has withdrawn all the tokens he locked.",
   "issueId": 530,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/530"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/530",
+  "validatedIssueId": 436,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/436"
 }
