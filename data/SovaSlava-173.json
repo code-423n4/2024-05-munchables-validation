@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "When user unlock all tokens, remainder value does not delete",
   "issueId": 173,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/173"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/173",
+  "validatedIssueId": 441,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/441"
 }
