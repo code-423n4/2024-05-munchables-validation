@@ -4,5 +4,7 @@
   "risk": "Q",
   "title": "QA Report",
   "issueId": 331,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/331"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/331",
+  "validatedIssueId": 547,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/547"
 }
