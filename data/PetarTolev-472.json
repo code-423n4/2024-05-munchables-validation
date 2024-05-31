@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "When `LockManager.lockOnBehalf` is called from `MigrationManager`, the user's `reminder` will be set to 0, resulting in fewer received `MunchableNFTs`",
   "issueId": 472,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/472"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/472",
+  "validatedIssueId": 455,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/455"
 }
