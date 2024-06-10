@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "When migrationManager calls the lock function, the user will lose the locked funds.",
   "issueId": 55,
-  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/55"
+  "issueUrl": "https://github.com/code-423n4/2024-05-munchables-validation/issues/55",
+  "validatedIssueId": 566,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-munchables-findings/issues/566"
 }
